@@ -65,11 +65,15 @@
         <?php if (session()->getFlashdata('failed')): ?>
             <span class="flash error"><?php echo session()->getFlashdata('failed') ?></span>
         <?php endif ?>
+
+        <?php if (session()->getFlashdata('notFound')): ?>
+            <span class="flash error"><?php echo session()->getFlashdata('notFound') ?></span>
+        <?php endif ?>
     </div>
 
     <nav class="links">
         <ul>
-            <li><a href="/login">Login</a></li>
+            <li><a href="/loginView">Login</a></li>
             <li><a href="/registerView">Register</a></li>
         </ul>
     </nav>
