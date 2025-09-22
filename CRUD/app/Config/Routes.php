@@ -7,3 +7,8 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('/check', 'DatabaseCheck::index');
+
+$routes->get('/registerView', 'RegistrationController::registerView');
+
+//create account
+$routes->post('/register', 'RegistrationController::registerAccount');
