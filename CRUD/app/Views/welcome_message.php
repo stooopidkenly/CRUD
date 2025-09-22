@@ -53,7 +53,6 @@
     <div class="mainContainer">
         <h1 class="welcome">Welcome to my Basic CRUD Application</h1>
 
-        <!-- Flash Messages here, below the title -->
         <?php if (session()->getFlashdata('registered')): ?>
             <span class="flash success"><?php echo session()->getFlashdata('registered') ?></span>
         <?php endif ?>
