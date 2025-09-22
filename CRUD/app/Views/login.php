@@ -65,20 +65,8 @@
 </head>
 
 <body>
-    <form action="" method="POST">
+    <form action="/login" method="POST">
         <h1>Login Here</h1>
-        <div class="firstname">
-            <label for="firstname">Firstname</label>
-            <input type="text" name="firstname" required>
-        </div>
-        <div class="middlename">
-            <label for="middlename">Middlename</label>
-            <input type="text" name="middlename" required>
-        </div>
-        <div class="lastname">
-            <label for="lastname">Lastname</label>
-            <input type="text" name="lastname" required>
-        </div>
         <div class="email">
             <label for="email">Email</label>
             <input type="email" name="email" required>
