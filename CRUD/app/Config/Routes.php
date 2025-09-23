@@ -15,6 +15,10 @@ $routes->get('/landing', 'PageController::landing');
 //get all users
 $routes->get('/users', 'FunctionController::showAll');
 
+//delete user
+$routes->post('/delete/(:num)', 'FunctionController::deleteUser/$1');
+//edit
+$routes->post('/edit/(:num)', 'FunctionController::editUser/$1');
 //create account
 $routes->post('/register', 'RegistrationController::registerAccount');
 

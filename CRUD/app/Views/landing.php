@@ -21,6 +21,10 @@
         <p>Hello, <?= session()->get('firstname'); ?>!</p>
     <?php endif ?>
 
+    <form action="/users" method="GET">
+        <button type=" submit">Show All Users</button>
+    </form>
+
     <table class="table table-bordered mt-4">
         <thead>
             <tr>
@@ -28,6 +32,7 @@
                 <th>Firstname</th>
                 <th>Lastname</th>
                 <th>Email</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -38,6 +43,23 @@
                         <td><?= $user['firstname'] ?></td>
                         <td><?= $user['lastname'] ?></td>
                         <td><?= $user['email'] ?></td>
+                        <td>
+                            <form action="<?= base_url('delete/' . $user['id']) ?>" method="post" style="display:inline;">
+                                <button type="submit"
+                                    class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Are you sure you want to delete this user?');">
+                                    Delete
+                                </button>
+                            </form>
+                            <!-- <form action="<?= base_url('edit/' . $user['id']) ?>" method="post" style="display:inline;">
+                                <button type="submit"
+                                    class="btn btn-green btn-sm"
+                                    onclick="return confirm('Edit User?');">
+                                    Edit
+                                </button>
+                            </form> -->
+                        </td>
+
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>
@@ -48,6 +70,11 @@
         </tbody>
     </table>
 
+    <script>
+        function showModalEdit() {
+
+        }
+    </script>
 </body>
 
 </html>

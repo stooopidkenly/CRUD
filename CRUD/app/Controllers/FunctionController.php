@@ -24,4 +24,24 @@ class FunctionController extends BaseController
         $users = $this->userModel->findAll();
         return view('landing', ['users' => $users]);
     }
+
+    public function deleteUser($id = null)
+    {
+        if ($id) {
+            $this->userModel->delete($id);
+            return redirect()->back()->with('success', 'User deleted successfully!');
+        } else {
+            return redirect()->back()->with('error', 'Invalid user ID!');
+        }
+    }
+
+    public function editUser($id = null)
+    {
+        if ($id) {
+            $this->userModel->update($id);
+            return redirect()->back()->with('editSuccess', 'User Edited Successfully');
+        } else {
+            return redirect()->back()->with('error', 'Invalid user ID!');
+        }
+    }
 }
